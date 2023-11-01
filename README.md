@@ -1,6 +1,7 @@
-This repository contains the supplementary materials to the paper on neural machine translation for the Erzya language. 
+# The first neural machine translation system for the Erzya language
+This repository contains the supplementary materials to the paper [The first neural machine translation system for the Erzya language](https://arxiv.org/abs/2209.09368). 
 
-В этом репозитории содержатся материалы к статье по нейросетевому машинному переводу для эрзянского языка.
+В этом репозитории содержатся материалы к [статье](https://arxiv.org/abs/2209.09368) по нейросетевому машинному переводу для эрзянского языка.
 
 # Deliverables
 These delivarables are released as supplementary materials to the paper:
