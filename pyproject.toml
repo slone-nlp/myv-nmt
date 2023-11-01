@@ -1,0 +1,66 @@
+[build-system]
+requires = ["flit_core >=3.2,<4", "setuptools"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "slone_nmt"
+version = "0.0.0"
+authors = [{name = "David Dale"}]
+description = "SLONE-NMT is a toolkit for low-resource neural machine translation"
+readme = "slone_nmt/README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    'sentencepiece>=0.1.0',
+    'numpy>=1.0.0',
+    'torch>=1.0.0',
+]
+
+classifiers=[
+    "License :: OSI Approved :: BSD License",
+    "Topic :: Scientific/Engineering",
+    "Development Status :: 4 - Beta",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/slone-nlp/myv-nmt"
+"Bug Tracker" = "https://github.com/slone-nlp/myv-nmt/issues"
+
+[project.optional-dependencies]
+dev = [
+    # Test
+    "pytest>=4.3.0",
+    # Format
+    "black==22.3.0",
+    "isort>=5.10.1",
+    # Linters
+    "mypy>=0.782",
+    "pylint>=2.8.0",
+    # Release
+    "flit>=3.5.1"
+]
+
+[tool.black]
+# Black defaults are great !
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+skip_glob = []
+
+[tool.mypy]
+python_version = "3.9"
+show_error_codes = true
+check_untyped_defs = true
+
+ignore_missing_imports = true
+
+files = [
+  "slone_nmt/"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["slone_nmt"]
+python_files = [
+  "test_*.py",
+]
