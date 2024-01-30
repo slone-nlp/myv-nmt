@@ -5,6 +5,7 @@ import numpy as np
 
 import torch
 import razdel
+from tqdm.auto import trange
 from transformers import AutoTokenizer, AutoModel
 
 
@@ -32,7 +33,7 @@ def get_top_mean_by_row(x, k=5):
     return x[rows, topk_indices].mean(1)
 
 
-def embed(texts, model, tokenizer, max_length=512, batch_size=16) -> np.ndarray:
+def embed(texts, model, tokenizer, max_length=512, batch_size=16, progress=False) -> np.ndarray:
     """LaBSE-like sentence embeding"""
     if isinstance(texts, str):
         single = True
@@ -40,7 +41,8 @@ def embed(texts, model, tokenizer, max_length=512, batch_size=16) -> np.ndarray:
     else:
         single = False
     result = []
-    for i in range(0, len(texts), batch_size):
+    range_fn = trange if progress else range
+    for i in range_fn(0, len(texts), batch_size):
         batch = texts[i:i+batch_size]
         encoded_input = tokenizer(batch, padding=True, truncation=True, max_length=max_length, return_tensors='pt')
         with torch.inference_mode():
