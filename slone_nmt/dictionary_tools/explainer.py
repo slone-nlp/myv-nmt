@@ -2,12 +2,13 @@ import json
 import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from typing import Callable, Dict, List, Optional, Tuple
+from functools import lru_cache
+from typing import Callable, Dict, List, Optional, Set, Tuple
 
+import pymorphy2
 from razdel import tokenize as razdel_tokenize
 from tqdm.auto import tqdm
-
-from slone_nmt.dictionary_tools.lemming import MultiLemmer
+from uralicNLP import uralicApi
 
 Lemma = Tuple[str, List[str]]
 
@@ -24,6 +25,20 @@ class ExplainedToken:
 def clean_word(word):
     # TODO: support the alphabets with extra characters
     return re.sub("[^а-яёa-z]", "", word.lower())
+
+
+class MultiLemmer:
+    def __init__(self):
+        self.pymorphy_analyzer = pymorphy2.MorphAnalyzer()
+
+    @lru_cache(maxsize=100_000)
+    def __call__(self, text: str, lang: str) -> List[str]:
+        if lang == "rus":
+            result = []
+            for hyp in self.pymorphy_analyzer.parse(text):
+                result.append(hyp.normal_form)
+            return result
+        return uralicApi.lemmatize(text, lang)
 
 
 class Explainer:
