@@ -43,6 +43,11 @@ dev = [
     # Release
     "flit>=3.5.1"
 ]
+dicts = [
+    "pymorphy2",
+    "pymorphy2-dicts",
+    "uralicNLP",
+]
 
 [tool.black]
 # Black defaults are great !
