@@ -18,7 +18,7 @@ class ExplainedToken:
     text: str
     start: int
     stop: int
-    lemmas: List[Lemma]
+    lemmas: List[Dict]
     # TODO: maybe, add some morphological info
 
 
@@ -87,9 +87,12 @@ class Explainer:
                 text=token.text,
                 start=token.start,
                 stop=token.stop,
-                lemmas=self.suggest_word_translations(
+                lemmas=[{
+                    "lemma": lemma,
+                    "translations": translations,
+                } for lemma, translations in self.suggest_word_translations(
                     token.text, include_empty=include_empty
-                ),
+                )],
             )
             for token in razdel_tokenize(text)
         ]
@@ -158,3 +161,31 @@ class Explainer:
             tgt_freqs={k: v for k, v in target_freqs.most_common()},
             lemmer=lemmer,
         )
+
+    def get_explained_spans(
+        self,
+        text: str,
+        include_empty: bool = False,
+    ) -> List[Dict[str, Optional[str]]]:
+        """ Convert text into a list of dicts like {"text": str, "tooltip": Optional[str]} """
+        analyzed_spans = self.explain_text(text, include_empty=include_empty)
+        result_spans = []
+        prev_end = 0
+        for span in analyzed_spans:
+            if span.start > prev_end:
+                result_spans.append({"text": text[prev_end:span.start], "tooltip": None})
+            prev_end = span.stop
+            tooltip_text = get_tooltip_text(span.lemmas)
+            result_spans.append({"text": text[span.start: span.stop], "tooltip": tooltip_text})
+        if len(text) > prev_end:
+            result_spans.append({"text": text[prev_end:len(text)], "tooltip": None})
+        return result_spans
+
+
+def get_tooltip_text(lemmas: List[Dict]) -> Optional[str]:
+    results = []
+    for lemma in lemmas:
+        if lemma.get('translations'):
+            results.append(lemma["lemma"] + " - " + ", ".join(lemma["translations"]))
+    if results:
+        return "\n".join(results)
