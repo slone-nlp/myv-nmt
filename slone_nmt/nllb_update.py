@@ -99,10 +99,10 @@ def update_nllb_tokenizer(
     """
     Create a new tokenizer for NLLB, with an updated sentencepiece model and some new language codes.
     In order to get rid of the old (and wrong) added token encoders/decoders, we save the tokenizer to disk and remove those files.
-    :param old_tokenizer:
-    :param new_spm_path:
-    :param new_lang_codes:
-    :return:
+    :param old_tokenizer: the original tokenizer
+    :param new_spm_path: path to the file with the sentncepiece model
+    :param new_lang_codes: list of the new codes to add to the tokenizer
+    :return: the new NllbTokenizer
     """
     TKN_DIR = "old_tokenizer"  # todo: make it a temp dir
     old_tokenizer.save_pretrained(TKN_DIR)
@@ -126,7 +126,6 @@ def update_nllb_tokenizer(
 
     new_tokenizer = NllbTokenizer.from_pretrained(
         TKN_DIR,
-        # vocab_file=NEW_SPM_NAME,
         additional_special_tokens=sorted(FAIRSEQ_LANGUAGE_CODES + new_lang_codes),
     )
     return new_tokenizer
