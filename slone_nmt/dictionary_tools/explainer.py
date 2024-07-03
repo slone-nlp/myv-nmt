@@ -173,12 +173,12 @@ class Explainer:
         prev_end = 0
         for span in analyzed_spans:
             if span.start > prev_end:
-                result_spans.append({"text": text[prev_end:span.start], "tooltip": None})
+                result_spans.append({"text": text[prev_end:span.start], "tooltip": None, "lemmas": []})
             prev_end = span.stop
             tooltip_text = get_tooltip_text(span.lemmas)
-            result_spans.append({"text": text[span.start: span.stop], "tooltip": tooltip_text})
+            result_spans.append({"text": text[span.start: span.stop], "tooltip": tooltip_text, "lemmas": [x["lemma"] for x in span.lemmas]})
         if len(text) > prev_end:
-            result_spans.append({"text": text[prev_end:len(text)], "tooltip": None})
+            result_spans.append({"text": text[prev_end:len(text)], "tooltip": None, "lemmas": []})
         return result_spans
 
 
