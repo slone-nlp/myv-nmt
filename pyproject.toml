@@ -12,12 +12,8 @@ requires-python = ">=3.8"
 
 dependencies = [
     'sentencepiece>=0.1.0',
-    'numpy>=1.0.0',
-    'torch>=1.0.0',
     'tqdm',
     'razdel',
-    'numpy',
-    'pandas',
 ]
 
 classifiers=[
@@ -41,7 +37,12 @@ dev = [
     "mypy>=0.782",
     "pylint>=2.8.0",
     # Release
-    "flit>=3.5.1"
+    "flit>=3.5.1",
+]
+align = [
+    'numpy>=1.0.0',
+    'torch>=1.0.0',
+    'pandas',
 ]
 dicts = [
     "pymorphy2",
