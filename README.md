@@ -64,6 +64,7 @@ and a new translation model that achieves the state-of-the-art quality of transl
 - Data:
     - [ ] FLORES+ in Erzya: to appear in https://github.com/openlanguagedata/flores and https://huggingface.co/datasets/openlanguagedata/flores_plus.
     - [x] Held-out Russian-Erzya dataset, annotated for accuracy and fluency: [slone/myv-rus-2022-quality-annotated](https://huggingface.co/datasets/slone/myv-rus-2022-quality-annotated) on HF
+    - [x] A training dataset collected from automatically aligned news articles: [slone/e-mordovia-articles-2023](https://huggingface.co/datasets/slone/e-mordovia-articles-2023) on HF
 - Models:
     - [x] Translation model: [NLLB-with-myv-v2024](https://huggingface.co/slone/nllb-with-myv-v2024) on HF
     - [x] LaBSE with Erzya support: [LaBSE-en-ru-myv-v2](https://huggingface.co/slone/LaBSE-en-ru-myv-v2) on HF.
