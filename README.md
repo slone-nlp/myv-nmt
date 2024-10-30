@@ -16,7 +16,7 @@ We release the translation models along with the collected text corpus, a new la
 These resources will be available at https://github.com/slone-nlp/myv-nmt.",
 
 
-### Deliverables
+### Artifacts
 These delivarables are released as supplementary materials to the paper:
 - Demo translation app: https://huggingface.co/spaces/slone/myv-translation-2022-demo
 - Dirty code for the paper: in the folder `dirty-code-2022`.
@@ -60,7 +60,7 @@ This translation was carried out as a part of the Open Language Data shared task
 We also present a benchmark of existing translation models bases on this dataset 
 and a new translation model that achieves the state-of-the-art quality of translation into Erzya from Russian and English.
 
-### Deliverables
+### Artifacts
 - Data:
     - [ ] FLORES+ in Erzya: to appear in https://github.com/openlanguagedata/flores and https://huggingface.co/datasets/openlanguagedata/flores_plus.
     - [x] Held-out Russian-Erzya dataset, annotated for accuracy and fluency: [slone/myv-rus-2022-quality-annotated](https://huggingface.co/datasets/slone/myv-rus-2022-quality-annotated) on HF
