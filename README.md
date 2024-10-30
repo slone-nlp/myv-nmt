@@ -69,9 +69,9 @@ and a new translation model that achieves the state-of-the-art quality of transl
     - [x] Translation model: [NLLB-with-myv-v2024](https://huggingface.co/slone/nllb-with-myv-v2024) on HF
     - [x] LaBSE with Erzya support: [LaBSE-en-ru-myv-v2](https://huggingface.co/slone/LaBSE-en-ru-myv-v2) on HF.
 - Code:
-    - [ ] Training code for the translation model: TBD
+    - [x] Training code for the translation model: [Colab notebook](https://colab.research.google.com/drive/1KEfSGwt6G7aZIXL1tkxWYKhY0HJ7A1S8?usp=sharing)
     - [x] Training code for the LaBSE model: [Colab notebook](https://colab.research.google.com/drive/1SxeraKZS6KYKobzVNNyIQZa4WnhpJ_nb?usp=sharing)
-    - [x] Code for automatic translation quality metrics: [Colab notebook](https://colab.research.google.com/drive/1KEfSGwt6G7aZIXL1tkxWYKhY0HJ7A1S8?usp=sharing)
+    - [ ] Code for automatic translation quality metrics: see `slone_nmt/metrics_2024.py`
 
 ## SLONE-NMT
 
