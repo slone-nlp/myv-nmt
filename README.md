@@ -3,7 +3,7 @@ This repository contains materials for a couple of papers about Erzya machine tr
 
 Этот репозиторий содержит материалы для нескольких статей об эрзянском машинном переводе и инструмент `slone_nmt` для воспроизведения некоторых из их результатов.
 
-Те репозиториесь кирди эрзянь машинной ютавксонь коряс зярыя сёрмадовкстнэнь туртов материалтнэнь ды зярыя результаттнэнь одс тееманть туртов `slone_nmt` инструментэсь.
+Те репозиториенть эйсэ ламо материалт зярыя статьяс эрзянь машинань ютавтоманть коряс ды `slone_nmt` инструментэсь кона-кона результатнэнь тевс нолдамонь туртов.
 
 ## The first neural machine translation system for the Erzya language
 This section contains the supplementary materials to the paper [The first neural machine translation system for the Erzya language](https://arxiv.org/abs/2209.09368) 
@@ -63,14 +63,14 @@ and a new translation model that achieves the state-of-the-art quality of transl
 ### Deliverables
 - Data:
     - [ ] FLORES+ in Erzya: to appear in https://github.com/openlanguagedata/flores and https://huggingface.co/datasets/openlanguagedata/flores_plus.
-    - [ ] Held-out Russian-Erzya dataset, annotated for accuracy and fluency: TBD
+    - [x] Held-out Russian-Erzya dataset, annotated for accuracy and fluency: [slone/myv-rus-2022-quality-annotated](https://huggingface.co/datasets/slone/myv-rus-2022-quality-annotated) on HF
 - Models:
     - [x] Translation model: [NLLB-with-myv-v2024](https://huggingface.co/slone/nllb-with-myv-v2024) on HF
     - [x] LaBSE with Erzya support: [LaBSE-en-ru-myv-v2](https://huggingface.co/slone/LaBSE-en-ru-myv-v2) on HF.
 - Code:
     - [ ] Training code for the translation model: TBD
-    - [ ] Training code for the LaBSE model: 
-    - [ ] Code for automatic translation quality metrics: TBD
+    - [x] Training code for the LaBSE model: [Colab notebook](https://colab.research.google.com/drive/1SxeraKZS6KYKobzVNNyIQZa4WnhpJ_nb?usp=sharing)
+    - [x] Code for automatic translation quality metrics: [Colab notebook](https://colab.research.google.com/drive/1KEfSGwt6G7aZIXL1tkxWYKhY0HJ7A1S8?usp=sharing)
 
 ## SLONE-NMT
 
