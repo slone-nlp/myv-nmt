@@ -51,7 +51,7 @@ These delivarables are released as supplementary materials to the paper:
 ```
 
 ## FLORES+ Translation and Machine Translation Evaluation for the Erzya Language
-This section contains the supplementary materials to the paper [FLORES+ Translation and Machine Translation Evaluation for the Erzya Language](https://www2.statmt.org/wmt24/pdf/2024.wmt-1.49.pdf) 
+This section contains the supplementary materials to the paper [FLORES+ Translation and Machine Translation Evaluation for the Erzya Language](https://aclanthology.org/2024.wmt-1.49/) 
 by Isai Gordeev, Sergey Kuldin and David Dale (2024).
 
 > This paper introduces a translation of the FLORES+ dataset into the endangered Erzya language, 
@@ -72,6 +72,23 @@ and a new translation model that achieves the state-of-the-art quality of transl
     - [x] Training code for the translation model: [Colab notebook](https://colab.research.google.com/drive/1KEfSGwt6G7aZIXL1tkxWYKhY0HJ7A1S8?usp=sharing)
     - [x] Training code for the LaBSE model: [Colab notebook](https://colab.research.google.com/drive/1SxeraKZS6KYKobzVNNyIQZa4WnhpJ_nb?usp=sharing)
     - [ ] Code for automatic translation quality metrics: see `slone_nmt/metrics_2024.py`
+    
+### Citation
+```
+@inproceedings{gordeev-etal-2024-flores,
+    title = "{FLORES}+ Translation and Machine Translation Evaluation for the {E}rzya Language",
+    author = "Gordeev, Isai and Kuldin, Sergey and Dale, David",
+    editor = "Haddow, Barry and Kocmi, Tom and Koehn, Philipp and Monz, Christof",
+    booktitle = "Proceedings of the Ninth Conference on Machine Translation",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.wmt-1.49",
+    pages = "614--623",
+    abstract = "This paper introduces a translation of the FLORES+ dataset into the endangered Erzya language, with the goal of evaluating machine translation between this language and any of the other 200 languages already included into FLORES+. This translation was carried out as a part of the Open Language Data shared task at WMT24. We also present a benchmark of existing translation models bases on this dataset and a new translation model that achieves the state-of-the-art quality of translation into Erzya from Russian and English.",
+}
+```
 
 ## SLONE-NMT
 
